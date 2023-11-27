@@ -1,6 +1,8 @@
+# python -m spacy download en
 import streamlit as st
 import nltk
 import spacy
+import en_core_web_sm
 nltk.download('stopwords')
 spacy.load('en_core_web_sm')
 
@@ -20,7 +22,7 @@ import pymysql
 from Courses import ds_course, web_course, android_course, ios_course, uiux_course, resume_videos, interview_videos
 import pafy
 import plotly.express as px
-import youtube_dl
+# import youtube_dl
 
 def fetch_yt_video(link):
     video = pafy.new(link)
@@ -372,18 +374,18 @@ def run():
                             str(recommended_skills), str(rec_course))
 
                 ## Resume writing video
-                st.header("**Bonus Video for Resume Writing Tips💡**")
-                resume_vid = random.choice(resume_videos)
-                res_vid_title = fetch_yt_video(resume_vid)
-                st.subheader("✅ **" + res_vid_title + "**")
-                st.video(resume_vid)
+                # st.header("**Bonus Video for Resume Writing Tips💡**")
+                # resume_vid = random.choice(resume_videos)
+                # res_vid_title = fetch_yt_video(resume_vid, verbose=True)
+                # st.subheader("✅ **" + res_vid_title + "**")
+                # st.video(resume_vid)
 
-                ## Interview Preparation Video
-                st.header("**Bonus Video for Interview👨‍💼 Tips💡**")
-                interview_vid = random.choice(interview_videos)
-                int_vid_title = fetch_yt_video(interview_vid)
-                st.subheader("✅ **" + int_vid_title + "**")
-                st.video(interview_vid)
+                # ## Interview Preparation Video
+                # st.header("**Bonus Video for Interview👨‍💼 Tips💡**")
+                # interview_vid = random.choice(interview_videos)
+                # int_vid_title = fetch_yt_video(interview_vid)
+                # st.subheader("✅ **" + int_vid_title + "**")
+                # st.video(interview_vid)
 
                 connection.commit()
             else:
@@ -396,8 +398,8 @@ def run():
         ad_user = st.text_input("Username")
         ad_password = st.text_input("Password", type='password')
         if st.button('Login'):
-            if ad_user == 'machine_learning_hub' and ad_password == 'mlhub123':
-                st.success("Welcome Kushal")
+            if ad_user == 'Saahil' and ad_password == 'mlhub123':
+                st.success("Welcome Saahil")
                 # Display Data
                 cursor.execute('''SELECT*FROM user_data''')
                 data = cursor.fetchall()
