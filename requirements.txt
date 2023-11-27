@@ -9,4 +9,6 @@ streamlit-tags
 Pillow
 youtube-dl
 nltk
-spacy
+pdfminer3
+spacy==2.3.5
+python -m spacy download en
