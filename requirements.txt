@@ -12,3 +12,7 @@ nltk
 pdfminer3
 spacy==2.3.5
 https://github.com/explosion/spacy-models/releases/download/en_core_web_sm-2.2.0/en_core_web_sm-2.2.0.tar.gz
+from sqlalchemy import create_engine
+from sklearn.neighbors import NearestNeighbors
+import pyodbc
+import pymysql
