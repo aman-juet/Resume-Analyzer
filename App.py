@@ -24,16 +24,7 @@ import pafy
 import plotly.express as px
 # import youtube_dl
 
-#newcode
-import mysql.connector
-connection = mysql.connector.connect(
-    host='db4free.net',
-    user='amanzing',
-    password='aman123@',
-    database='sra123'
-)
-cursor = connection.cursor()
-cursor.execute("SELECT * FROM `user_data`")
+
 
 #tillhere
 st.set_page_config(
@@ -99,10 +90,10 @@ def course_recommender(course_list):
             break
     return rec_course
 
-'''
-connection = pymysql.connect(host='localhost', user='root', password='')
+
+connection = pymysql.connect(host='db4free.net', user='amanzing', password='aman123@')
 cursor = connection.cursor()
-'''
+
 
 def insert_data(name, email, res_score, timestamp, no_of_pages, reco_field, cand_level, skills, recommended_skills,
                 courses):
