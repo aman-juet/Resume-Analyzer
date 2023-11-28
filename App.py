@@ -97,14 +97,7 @@ def course_recommender(course_list):
 
 import mysql.connector
 
-connection = mysql.connector.connect(
-  host='db4free.net',
-  user='amanzing',
-  password='aman123@',
-  database='sra123'
-
-  ) 
-db = pymysql.connect(host="db4free.net",port=8889,user="amanzing",passwd="aman123@")
+db = pymysql.connect(host="db4free.net",port=3306,user="amanzing",passwd="aman123@")
 cursor=db.cursor()
 cursor.execute("SHOW DATABASES")
 results=cursor.fetchall()
