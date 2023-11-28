@@ -91,7 +91,8 @@ def course_recommender(course_list):
     return rec_course
 
 
-connection = pymysql.connect(host='db4free.net', user='amanzing', password='aman123@')
+#connection = pymysql.connect(host='db4free.net', user='amanzing', password='aman123@')
+connection = pymysql.connect(db='sra123', user='amanzing', password='aman123@', unix_socket="/tmp/mysql.sock")
 cursor = connection.cursor()
 
 
