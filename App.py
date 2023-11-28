@@ -92,8 +92,22 @@ def course_recommender(course_list):
 
 
 #connection = pymysql.connect(host='db4free.net', user='amanzing', password='aman123@')
-connection = pymysql.connect(db='sra123', user='amanzing', password='aman123@', host='db4free.net', unix_socket="/tmp/mysql.sock")
-cursor = connection.cursor()
+#connection = pymysql.connect(db='sra123', user='amanzing', password='aman123@', host='db4free.net', unix_socket="/tmp/mysql.sock")
+#cursor = connection.cursor()
+
+import mysql.connector
+
+connection = mysql.connector.connect(
+  host='db4free.net',
+  user='amanzing',
+  password='aman123@',
+  database='sra123'
+
+  ) 
+db = pymysql.connect(host="db4free.net",port=8889,user="amanzing",passwd="aman123@")
+cursor=db.cursor()
+cursor.execute("SHOW DATABASES")
+results=cursor.fetchall()
 
 
 def insert_data(name, email, res_score, timestamp, no_of_pages, reco_field, cand_level, skills, recommended_skills,
