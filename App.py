@@ -5,7 +5,7 @@ import spacy
 import en_core_web_sm
 nltk.download('stopwords')
 spacy.load('en_core_web_sm')
-
+import sqlalchemy
 import pandas as pd
 import base64, random
 import time, datetime
