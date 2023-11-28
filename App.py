@@ -24,6 +24,19 @@ import pafy
 import plotly.express as px
 # import youtube_dl
 
+import mysql.connector
+connection = mysql.connector.connect(
+    host='db4free.net',
+    user='amanzing',
+    password='aman123@',
+    database='sra123'
+)
+cursor = connection.cursor()
+cursor.execute("SELECT * FROM `user_data`")
+
+    
+    
+
 def fetch_yt_video(link):
     video = pafy.new(link)
     return video.title
