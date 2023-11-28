@@ -24,6 +24,7 @@ import pafy
 import plotly.express as px
 # import youtube_dl
 
+#newcode
 import mysql.connector
 connection = mysql.connector.connect(
     host='db4free.net',
@@ -34,7 +35,7 @@ connection = mysql.connector.connect(
 cursor = connection.cursor()
 cursor.execute("SELECT * FROM `user_data`")
 
-    
+#tillhere
     
 
 def fetch_yt_video(link):
@@ -95,10 +96,10 @@ def course_recommender(course_list):
             break
     return rec_course
 
-
+'''
 connection = pymysql.connect(host='localhost', user='root', password='')
 cursor = connection.cursor()
-
+'''
 
 def insert_data(name, email, res_score, timestamp, no_of_pages, reco_field, cand_level, skills, recommended_skills,
                 courses):
