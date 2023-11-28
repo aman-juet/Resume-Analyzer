@@ -23,6 +23,25 @@ from Courses import ds_course, web_course, android_course, ios_course, uiux_cour
 import pafy
 import plotly.express as px
 # import youtube_dl
+from sqlalchemy import create_engine
+import pyodbc
+import pymysql
+
+
+engine = sqlalchemy.create_engine(
+    "mssql+pyodbc://amanzing:aman123@@DB_server/sra123?driver=ODBC+Driver+17+for+SQL+Server", 
+    )
+
+
+title_df = pd.read_sql('SELECT * FROM user_data', engine)
+
+@st.cache(allow_output_mutation=True)
+def get_connection():
+    return create_engine("mssql+pyodbc://amanzing:aman123@@DB_server/sra123?driver=ODBC+Driver+17+for+SQL+Server", 
+    fast_executemany = True
+    )
+
+
 
 def fetch_yt_video(link):
     video = pafy.new(link)
