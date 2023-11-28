@@ -13,6 +13,6 @@ pdfminer3
 spacy==2.3.5
 https://github.com/explosion/spacy-models/releases/download/en_core_web_sm-2.2.0/en_core_web_sm-2.2.0.tar.gz
 pymysql
-SQLAlchemy
+SQLAlchemy==2.0.23
 mysql-connector-python
 pyodbc
